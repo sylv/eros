@@ -1,0 +1,13 @@
+{
+  "name": "eros",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/sylv/eros.git",
+  "author": "Ryan <ryan@sylver.me>",
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^2.1.2"
+  },
+  "dependencies": {}
+}
