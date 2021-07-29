@@ -1,9 +1,20 @@
 # eros
 
-A shitty placeholder replacer made mostly for a free shirt. This could absolutely be smaller and faster but I'm not gonna spend the time on that. Basically [devsnek/TagScript](https://github.com/devsnek/TagScript) but it works
+A shitty placeholder replacer made mostly for a free shirt
+
+### simple usage
 
 ```js
-import { Interpreter, Lexer } from "sylv/eros";
+import { run, runInterpreter } from "...";
+// runInterpreter is an instance of Interpreter that is used by run(), you can register extra tags with it if you want
+const output = await run(`{choose;femboys;catgirls}`);
+console.log({ output });
+```
+
+### advanced usage
+
+```js
+import { Interpreter, Lexer } from "...";
 import fetch from "node-fetch";
 
 // interpreter can be reused
@@ -19,11 +30,4 @@ const script = `Your IP is {http;http://icanhazip.com/}`;
 const tree = lexer.parse();
 const output = await interpreter.interpret(tree);
 console.log({ output }); // "Your IP is 173.245.48.69"
-```
-
-```js
-import { run, runInterpreter } from "sylv/eros";
-// runInterpreter is an instance of Interpreter that is used by run(), you can register extra tags there if you want.
-const output = await run(`{choose;femboys;catgirls}`);
-console.log({ output });
 ```
